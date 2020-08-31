@@ -1,0 +1,11 @@
+# files to be ignoreds
+# python venv/env files
+venv/
+env/
+
+# editors file/ IDE
+.vscode/
+.idle/
+
+# python cached files
+*.pyc
