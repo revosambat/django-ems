@@ -3,5 +3,10 @@
 {% block content %}
     <h2>Detail page</h2>
     <h3>{{question.title}}</h3>
+    {% for choice in question.choices %}
+        <p>{{choice.text}} ({{choice.votes}})</p>
+    {% empty %}
+    <p>There is no choice availabe for this question</p>
+    {% endfor %}
     <p>Poll is created by {{question.created_by.first_name}}</p>
 {% endblock content %}
