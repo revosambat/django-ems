@@ -31,8 +31,8 @@ def poll(request, id=None):
     if request.method == "POST":
         user_id = 1
         data = request.POST
-        ret = Answer.objects.create(user_id=user_id, choice_id = data['choice'])
+        ret = Answer.objects.create(user_id = user_id, choice_id = data['choice'])
         if ret:
             return HttpResponse("Your vote is added succesfully ")
         else:
-            return HttpResponse("You have not voted to submit") 
+            return HttpResponse("Your vote is not added successfully ") 
