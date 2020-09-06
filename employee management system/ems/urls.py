@@ -19,7 +19,7 @@ from employee.views import user_login, user_logout, success
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('polls/', include('poll.urls')),
+    path('poll/', include('poll.urls')),
     path('employee/', include('employee.urls')),
 
     path('login/', user_login, name="user_login"),
