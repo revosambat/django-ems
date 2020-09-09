@@ -1,6 +1,6 @@
 <div class="nav-bar">
     <button><a href="{% url 'employee_list' %}">Employee</a></button>
-    <button><a href="{% url 'polls_list' %}">Polls</a></button>
+    <button><a href="{% url 'polls_list' %}">Polls </a></button> <b>{{polls_count}}</b>
     <div class='logout'>
         <form method="POST" action="/logout/">
             {% csrf_token %}

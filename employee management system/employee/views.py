@@ -32,12 +32,12 @@ def success(request):
     return render(request, "auth/success.html", context)
 
 def  user_logout(request):
-    if request.method == "POST":
-        logout(request)
-        return HttpResponseRedirect(reverse('user_login'))
+    logout(request)
+    return HttpResponseRedirect(reverse('user_login'))
 
 @login_required(login_url="/login/")
 def employee_list(request):
+    print(request.role)
     context = {}
     context['users'] = User.objects.all()
     context['title'] = 'Employees'
