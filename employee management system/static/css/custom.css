@@ -1,15 +1,19 @@
 body {
-    background-color: rgb(5, 37, 5);
-    text-align: center;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
+	background-color: rgb(5, 37, 5);
+	text-align: center;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
 }
 
 ul {
-    list-style-type: none;
+	list-style-type: none;
 }
 
-.logout{
-    float:right;
+a {
+	text-emphasis: none;
+	text-decoration: none;
 }
 
+.logout {
+	float: right;
+}

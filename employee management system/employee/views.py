@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from ems.decorators import role_required
 from django.urls import reverse
 from employee.form import UserForm
 
@@ -50,6 +51,7 @@ def employee_details(request, id=None):
     return render(request, 'employee/details.html', context)
 
 @login_required(login_url="/login/")
+@role_required(allowed_roles=['admin'])
 def employee_add(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST)
@@ -61,6 +63,7 @@ def employee_add(request):
     else:
         user_form = UserForm()
         return render(request, 'employee/add.html', {"user_form": user_form})
+    
 
 @login_required(login_url="/login/")        
 def employee_edit(request, id=None):
